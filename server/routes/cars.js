@@ -104,12 +104,11 @@ router.post("/delete", (req, res, next) => {
   if (req.body.Carname == "")
     query = { Price : { $gt :  req.body.minprice, $lt : req.body.maxprice}};
   else
-    query = { Carname: req.body.Carname, Price : { $gt :  req.body.minprice, $lt : req.body.maxprice}};
+    query = { Carname: req.body.Carname};
 
   car.deleteMany(query, function(err, cars) {
     if (err) throw err;
     console.log(query);
-    console.log(cars + " document(s) deleted");
     res.redirect("/cars");
   });
 });
