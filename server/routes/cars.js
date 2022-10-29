@@ -108,7 +108,6 @@ router.post("/delete", (req, res, next) => {
 
   car.deleteMany(query, function(err, cars) {
     if (err) throw err;
-    console.log(query);
     res.redirect("/cars");
   });
 });
