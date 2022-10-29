@@ -35,7 +35,7 @@ router.get("/add", (req, res, next) => {
   res.render("cars/add", { title: "Add Car" });
 });
 
-// POST process the Car  Details page and create a new Car  - CREATE
+// POST process the Car Details page and create a new Car  - CREATE
 router.post("/add", (req, res, next) => {
   let newCar = car({
     Carname: req.body.Carname,
